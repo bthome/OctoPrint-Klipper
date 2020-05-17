@@ -53,8 +53,8 @@ VOLUME /home/octoprint/.octoprint
 USER root
 
 #Add directory as virtual device
-RUN mkdir /home/octoprint/dev
-RUN touch /home/octoprint/dev/ttyV0
+RUN mkdir /home/octoprint/.octoprint/dev
+RUN touch /home/octoprint/.octoprint/dev/ttyV0
 
 RUN apt install -y sudo
 
