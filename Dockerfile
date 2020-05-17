@@ -1,5 +1,5 @@
 
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y \
     cmake \
@@ -29,9 +29,6 @@ USER octoprint
 #This fixes issues with the volume command setting wrong permissions
 RUN mkdir /home/octoprint/.octoprint
 
-#Add directory as virtual device
-RUN mkdir -p /home/octoprint/.octoprint/dev/ttyV0
-
 #Install Octoprint
 RUN git clone --branch $tag https://github.com/foosel/OctoPrint.git /opt/octoprint \
   && virtualenv venv \
@@ -54,6 +51,10 @@ VOLUME /home/octoprint/.octoprint
 ### Klipper setup ###
 
 USER root
+
+#Add directory as virtual device
+RUN mkdir /home/octoprint/dev
+RUN touch /home/octoprint/dev/ttyV0
 
 RUN apt install -y sudo
 
