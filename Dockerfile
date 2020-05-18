@@ -30,7 +30,7 @@ USER octoprint
 RUN mkdir /home/octoprint/.octoprint
 
 #Add directory for config files
-RUN mkdir /home/config
+RUN mkdir /home/octoprint/config
 
 #Add directory as virtual device
 RUN mkdir /home/octoprint/dev
