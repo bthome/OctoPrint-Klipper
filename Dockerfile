@@ -29,6 +29,9 @@ USER octoprint
 #This fixes issues with the volume command setting wrong permissions
 RUN mkdir /home/octoprint/.octoprint
 
+#Add directory for config files
+RUN mkdir /home/config
+
 #Add directory as virtual device
 RUN mkdir /home/octoprint/dev
 RUN touch /home/octoprint/dev/ttyV0
