@@ -7,7 +7,7 @@ import pwd
 
 def main():
     while 1:
-        klipper = subprocess.Popen(['/home/octoprint/klippy-env/bin/python', '/home/octoprint/klipper/klippy/klippy.py', '/home/octoprint/.octoprint/printer.cfg'])
+        klipper = subprocess.Popen(['/home/octoprint/klippy-env/bin/python', '/home/octoprint/klipper/klippy/klippy.py', '/home/octoprint/config/printer_octo.cfg', '-l', '/tmp/klippy.log'])
         if klipper.wait() == 0:
             # Exited cleanly, don't sleep for long
             time.sleep(1)
